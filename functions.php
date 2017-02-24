@@ -37,12 +37,24 @@
         //find max in array of scores
         echo "And the winner is......";
         $max = 0;
+        $winner = '';
         foreach ($playerScoreArray as $name => $score) //go through all players
-           if($score > $max)
+           if($score > $max){
+                $winner = $name;
                 $max = $score; //update max
-                
-        echo $max;
+           }
+        echo "player " . $winner . " with " . $max . " points!";
+    }
+    
+    //function displays player images
+    function displayplayer($playerImageArray)
+    {
+        $random_keys=array_rand($playerImageArray,4);
+        echo "<img src= \"" . $playerImageArray[$random_keys[0]] . "\" /><br>";
+        echo "<img src= \"" . $playerImageArray[$random_keys[1]] . "\" /><br>";
+        echo "<img src= \"" . $playerImageArray[$random_keys[2]] . "\" /><br>";
+        echo "<img src= \"" . $playerImageArray[$random_keys[3]] . "\" />";
     }
     drawcards($cardArray, $playerScoreArray); //call first function
-    
+    displayplayer($playerImageArray); //call displayplayer function
 ?>

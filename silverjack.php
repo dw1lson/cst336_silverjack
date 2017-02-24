@@ -17,4 +17,7 @@ $cardArray = array("img/clubs/1.png" => "1", "img/clubs/2.png" => "2", "img/club
 #player score array maps player to score
 $playerScoreArray = array("player1" => "0", "player2" => "0", "player3" => "0", "player4" => "0");
 
+#player image array
+$playerImageArray = array("img/players/1.jpg", "img/players/2.jpg", "img/players/3.jpg", "img/players/4.jpg");
+
 ?>
