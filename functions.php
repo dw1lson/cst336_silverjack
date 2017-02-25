@@ -5,7 +5,7 @@
     // echo "This is Jason's part";
     
 
-    function drawcards($cardArray, &$playerScoreArray)
+    function drawcards($cardArray, &$playerScoreArray, &$players)
     {
         $scores = array('');
         foreach ($playerScoreArray as $name => $score) //go through all players
@@ -25,25 +25,33 @@
             echo $score; //current player's total score
             array_push($scores, $score); //array of scores
             echo "</br>";
+            echo "</br>";
         }
         
-        displaywinner($scores); //call second function
+        displaywinner($scores,$players); //call second function
 
     }
 
     
-    function displaywinner($playerScoreArray)
+    function displaywinner($playerScoreArray, &$players)
     {
         //find max in array of scores
         echo "And the winner is......";
         $max = 0;
         $winner = '';
+        $winnerPoints =0;
         foreach ($playerScoreArray as $name => $score) //go through all players
-           if($score > $max){
+           {
+               $winnerPoints +=$score;
+               if($score > $max){
                 $winner = $name;
                 $max = $score; //update max
+                }
+               
            }
-        echo "player " . $winner . " with " . $max . " points!";
+           $winnerPoints -= $max;
+        echo $players[$winner-1][1] . " with " . $max . " points! <br/> And earned ". $winnerPoints . " points!";
+        
     }
     
     //function displays player images
@@ -55,6 +63,21 @@
         echo "<img src= \"" . $playerImageArray[$random_keys[2]] . "\" /><br>";
         echo "<img src= \"" . $playerImageArray[$random_keys[3]] . "\" />";
     }
-    drawcards($cardArray, $playerScoreArray); //call first function
-    displayplayer($playerImageArray); //call displayplayer function
+    
+    function displayplayers(&$players)
+    {
+       
+        shuffle($players);
+        echo "<img src= \"" . $players[0][0] . "\" /><br>";
+        echo $players[0][1]. "<br> <br>";
+        echo "<img src= \"" . $players[1][0] . "\" /><br>";
+        echo $players[1][1]. "<br><br>";       
+        echo "<img src= \"" . $players[2][0] . "\" /><br>";
+        echo $players[2][1]. "<br><br>";       
+        echo "<img src= \"" . $players[3][0] . "\" /><br>";
+        echo $players[3][1]. "<br><br>";
+        
+    }
+    //drawcards($cardArray, $playerScoreArray); //call first function
+    //displayplayer($playerImageArray); //call displayplayer function
 ?>

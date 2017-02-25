@@ -18,6 +18,9 @@ $cardArray = array("img/clubs/1.png" => "1", "img/clubs/2.png" => "2", "img/club
 $playerScoreArray = array("player1" => "0", "player2" => "0", "player3" => "0", "player4" => "0");
 
 #player image array
-$playerImageArray = array("img/players/1.jpg", "img/players/2.jpg", "img/players/3.jpg", "img/players/4.jpg");
+//$playerImageArray = array("img/players/1.jpg", "img/players/2.jpg", "img/players/3.jpg", "img/players/4.jpg");
+
+$players =array(array("img/players/1.jpg","Sully"),array("img/players/2.jpg","Mike"),array("img/players/3.jpg","Gizmo"),array("img/players/4.jpg","Hooter"));
 
 ?>
+
