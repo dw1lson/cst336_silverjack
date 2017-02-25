@@ -50,7 +50,7 @@
                
            }
            $winnerPoints -= $max;
-        echo $players[$winner-1][1] . " with " . $max . " points! <br/> And earned ". $winnerPoints . " points!";
+        echo $players[$winner-1][1] . " with " . $max . " points! <br/>". $players[$winner-1][1] ." earned ". $winnerPoints . " points!";
         
     }
     
